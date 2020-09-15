@@ -7,25 +7,17 @@
   <title>Tech Stacks</title>
   </head>
   <body>
-    <!-- <h1 style="text-align:center;">TECHSTACKS</h1>
-    <img style="display: block;margin-left: auto;margin-right: auto;" src="https://cdn.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg" height="250" width="250"/> -->
-
-<!-- <br> -->
-<!-- <hr> -->
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo" style="padding-left: 10px;"><i class="material-icons">cloud</i>Techstacks</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li class="left"><a class='dropdown-trigger btn black' href='#' data-target='dropdown1'>Choose</a></li>
+        <li class="left"><a class='dropdown-trigger btn blue' href='#' data-target='dropdown1'>Choose</a></li>
 
         <!-- Dropdown Structure -->
         <ul id='dropdown1' class='dropdown-content'>
           <li><a href="#!">one</a></li>
           <li><a href="#!">two</a></li>
-          <li class="divider" tabindex="-1"></li>
           <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
         </ul>
       <li><a href="index.html"><i class="material-icons left">home</i>Home</a></li>
       <li><a href="webapp.html"><i class="material-icons left">desktop_windows</i>Web App</a></li>
@@ -35,34 +27,44 @@
     </ul>
   </div>
 </nav>
-<div>
-    <div>
-      <h2>Mobile App - A</h2>
-      <h3>Android - Flutter; iOS - Flutter; API - GraphQL</h3>
-      <img src="assets/mobile-app-a.png" height="600", width="1100"/>
 
-      <h3>Details</h3>
-      <p>For this configuration, you will require: </p>
-      <ul>
-          <li>Working knowledge about using Flutter</li>
-          <li>GitHub Student Edition Pack or Microsoft Azure Student Credits</li>
-          <li>Working knowledge in building Django-GraphQL APIs</li>
-      </ul>
-      <p>Steps</p>
-      <!-- add more specific details and links -->
-      <ol>
-          <li>Build your GraphQL endpoint at your ur;/graphql</li>
-          <li>Make your Flutter app and import http as a package</li>
-          <li>Interact with the GraphQL API</li>
-      </ol>
-      <h3>Resources</h3>
-      <p>Please watch the following YouTube tutorial by NetNinja to get started with Flutter: </p>
-      <a href="https://www.youtube.com/watch?v=1ukSR1GRtMU&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ">Flutter Net Ninja</a>
-      <p>You have a mobile app up and running!</p>
-      <br>
+    <div class="container">
+      <h2>Backend</h2>
+      <hr class="rounded">
+      <h3>Database</h3>
+      <img src="http://www.timtyson.us/wordpress/wp-content/uploads/2014/05/database-mysql-logo-300x300.png" style = "padding-top:10px; padding-bottom: 10px;"height="320", width="320"/>
+      <p class="flow-text">
+        Luckily, for this configuration, you don't need to know any MySQL queries, since Django will use it's inbuilt ORM or Object Relational Manager and handle them! You do need to know how to make efficient database designs so as to make the backend work effectively!<br>
+        <b>Watch this short video to get started!</b></p>
+        <iframe width="700" height="500" style = "padding-top: 10px;" src="https://www.youtube.com/embed/cepspxPAUTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      <h3 style="padding-top: 20px;">Engine</h3>
+      <img src="https://miro.medium.com/max/3840/1*KwSbyYyqaukruQVofd1HTQ.jpeg" style = "padding-top:10px; padding-bottom: 10px;"height="320", width="520"/>
+      <p class="flow-text">
+        No, no! We'll be using the Django framework in Python, completely unrelated to chains!😂<br>
+        On a more serious note, this is what'll you need to get your Django project set up.</p>
+        <ol class="flow-text">
+        <li>
+          Learn how to create projects in Django (resources added below).
+        </li>
+        <li>
+          Configure your settings.py file to MySQL instead of the default SQLite (doing this will let us host the db on the cloud).
+        </li>
+        <li>
+          Learn how to create a GraphQL API in Django using graphene (resources added below).
+        </li>
+        <li>
+          Run your Django project on your local webhost and make GET and POST calls to make sure the API works. Also check if the templates are rendered.
+        </li>
+        <li>
+          Make the changes in the settings.py file to configure the Django project for Azure (given below).
+        </li>
+        </ol>
+      
     </div>
    
     </body>
+    <script src="materialize.js"></script> 
     <script>M.AutoInit(); document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.dropdown-trigger');
       var instances = M.Dropdown.init(elems, options);
