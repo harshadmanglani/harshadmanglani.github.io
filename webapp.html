@@ -29,34 +29,39 @@
       </div>
     </nav>
     <div>
-      <div class="row">
-        <div class="col s12">
-          <h2>Web App - A</h2>
-          <h3>Database - MySQL; Web - Django, HTML, CSS, Bootstrap;</h3>
-          <img src="assets/web-app-a.png" height="600", width="1100"/>
-          <h3>Details</h3>
-          <p>For this configuration, you will require: </p>
-          <ul>
-              <li>Working knowledge about using Django</li>
-              <li>GitHub Student Edition Pack or Microsoft Azure Student Credits</li>
-              <li>Working knowledge in designing web pages using HTML, CSS, Django</li>
-          </ul>
-          <p>Steps</p>
-          <!-- add more specific details and links -->
-          <ol>
-              <li>Go to the Azure portal, and deploy a 'Azure for MySQL database', and save the database details.</li>
-              <li>Start your Django projects, and change database settings to MySQL, and configure host, username, password.</li>
-              <li>Design your webpages in HTML, CSS, Bootstrap and configure them with the Django project.</li>
-              <li>Deploy your Django project on Azure as a Web App.</li>
+      <div class="container">
+        <h2>Backend</h2>
+        <hr class="rounded">
+        <h3>Database</h3>
+        <img src="http://www.timtyson.us/wordpress/wp-content/uploads/2014/05/database-mysql-logo-300x300.png" style = "padding-top:10px; padding-bottom: 10px;"height="320", width="320"/>
+        <p class="flow-text">
+          Luckily, for this configuration, you don't need to know any MySQL queries, since Django will use it's inbuilt ORM or Object Relational Manager and handle them! You do need to know how to make efficient database designs so as to make the backend work effectively!<br>
+          <b>Watch this short video to get started!</b></p>
+          <iframe width="700" height="500" style = "padding-top: 10px;" src="https://www.youtube.com/embed/cepspxPAUTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <h3 style="padding-top: 20px;">Engine</h3>
+        <img src="https://miro.medium.com/max/3840/1*KwSbyYyqaukruQVofd1HTQ.jpeg" style = "padding-top:10px; padding-bottom: 10px;"height="320", width="520"/>
+        <p class="flow-text">
+          No, no! We'll be using the Django framework in Python, completely unrelated to chains!😂<br>
+          On a more serious note, this is what'll you need to get your Django project set up.</p>
+          <ol class="flow-text">
+          <li>
+            Learn how to create projects in Django (resources added below).
+          </li>
+          <li>
+            Configure your settings.py file to MySQL instead of the default SQLite (doing this will let us host the db on the cloud).
+          </li>
+          <li>
+            Learn how to create a GraphQL API in Django using graphene (resources added below).
+          </li>
+          <li>
+            Run your Django project on your local webhost and make GET and POST calls to make sure the API works. Also check if the templates are rendered.
+          </li>
+          <li>
+            Make the changes in the settings.py file to configure the Django project for Azure (given below).
+          </li>
           </ol>
-          <h3>Resources</h3>
-          <p>Please watch the following YouTube tutorial by Telusko to get started with Django: </p>
-          <a href="https://www.youtube.com/watch?v=SIyxjRJ8VNY&list=PLsyeobzWxl7r2ukVgTqIQcl-1T0C2mzau">Django Telusko</a>
-          <p>You have a webapp up and running!</p>
-          <br>        </div>
-  
+        
       </div>
-      
-    </div>
     </body>
 </html>
