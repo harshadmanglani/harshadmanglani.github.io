@@ -1,0 +1,334 @@
+<!-- References -->
+<!-- https://www.rexegg.com/regex-quickstart.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <link rel="stylesheet" href="css/materialize.css">
+    <title>Tech Stacks</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Tech Stacks</title>
+    </head>
+    <body>
+      <!-- <h1 style="text-align:center;">TECHSTACKS</h1>
+      <img style="display: block;margin-left: auto;margin-right: auto;" src="https://cdn.pixabay.com/photo/2016/12/09/11/33/smartphone-1894723_1280.jpg" height="250" width="250"/> -->
+  
+  <!-- <br> -->
+  <!-- <hr> -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo" style="padding-left: 10px;"><i class="material-icons">cloud</i>Techstacks</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html"><i class="material-icons left">home</i>Home</a></li>
+        <li><a href="webapp.html"><i class="material-icons left">desktop_windows</i>Web App</a></li>
+        <li><a href="mobile.html"><i class="material-icons left">phone_android</i>Mobile App</a></li>
+        <li><a href="backend.html"><i class="material-icons left">settings_input_hdmi</i>Backend</a></li>
+        <li><a href="hosting.html"><i class="material-icons left">backup</i>Hosting</a></li>
+        <li><a href="contact.html"><i class="material-icons left">contact_page</i>Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+        <div 	class="container">
+		<!-- onfocus="this.value=''" -->
+		<div class="row">
+		<div class="col s6"> 
+			<h2>Feedback Form</h2>
+		</div>
+		<div class="col s6">
+			<img src="http://www.clipartbest.com/cliparts/9c4/697/9c4697qni.png" height="70" width="70">
+		</div>
+		</div>
+        <br>
+        <br>
+		<form class="feedback-form col s6" action="" onsubmit="return validateall()">
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname" placeholder="Enter your first name" onkeydown="return alphaOnly(event)" onchange="myFunction(this.value, this.id)" pattern="[a-zA-z]*" style="padding: 0px 15px;"><br>
+			<label for="mname">Middle name:</label><br>
+			<input type="text" id="mname" name="mname" placeholder="Enter your middle name" onkeydown="return alphaOnly(event)" onchange="myFunction(this.value, this.id)" pattern="[a-zA-z]*" style="padding: 0px 15px;"><br>
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname" placeholder="Enter your last name" onkeydown="return alphaOnly(event)" onchange="myFunction(this.value, this.id)" pattern="[a-zA-z]*" style="padding: 0px 15px;"><br>
+			<label for="email">Email</label><br>
+			<input type="Email" id="email" name="email" placeholder="Enter your email" onchange="validateEmail(this.value, this.id)" style="padding: 0px 15px;"><br>
+			<label for="password">Password</label><br>
+			<input type="password" id="password" name="password" placeholder="Enter your password" onchange="validatePassword(this.value, this.id)" style="padding: 0px 15px;"><br>
+			<label for="phnumber">Phone Number</label><br>
+			<input type="tel" id="phnumber" name="phnumber" placeholder="Enter your phone number" onchange="validateMobile(this.value, this.id)" maxlength="10" style="padding: 0px 15px;"><br>
+			<label for="pinnumber">Pin Number</label><br>
+			<input type="text" id="pinnumber" name="pinnumber" placeholder="Enter your PIN number" onchange="validatePin(this.value, this.id)" maxlength="6" style="padding: 0px 15px;"><br>
+			<label for="address">Address</label><br>
+			<input type="text" id="address" name="address" placeholder="Enter your address" onchange="validateAddress(this.value, this.id)" style="padding: 0px 15px;"><br>
+			
+			<label for="education">Education Level</label><br>
+
+			<select id="country" name="country" class="browser-default">
+				<option value="" selected="selected" disabled="disabled">-- Select One --</option>
+				<option value="No formal education">No formal education</option>
+				<option value="Primary education">Primary education</option>
+				<option value="Secondary education">Secondary education or high school</option>
+				<option value="GED">GED</option>
+				<option value="Vocational qualification">Vocational qualification</option>
+				<option value="Bachelor's degree">Bachelor's degree</option>
+				<option value="Master's degree">Master's degree</option>
+				<option value="Doctorate or higher">Doctorate or higher</option>
+			</select><br>
+			<label for="gender">Gender</label><br>
+			<label>
+				<input type="radio" id="male"  value="male">
+				<span>Male</span>
+			</label>
+			<br>
+			<label>
+				<input type="radio" id="female"  value="female">
+				<span>Female</span>
+			</label>
+			<br>
+			<label>
+				<input type="radio" id="other"  value="other">
+				<span>Other</span>
+			</label><br>
+
+			<!-- <input type="button" id="btn" value="Show Selected Value" onclick="validateall()"> -->
+			<br>
+			<label for="suggestions">Feedback</label>
+			<div class="input-field">
+				<textarea class="materialize-textarea" id="suggestion" placeholder="Enter your feedback"></textarea>
+			</div>
+			<br>
+            <input class = "waves-effect waves-light btn" type="submit" value="Submit">
+            <br>
+            <br>
+        </form>
+        </div>
+		<script>
+			var valArr = [false,false,false,false,false,false,false,false,false,false,false];
+			var details = {}
+
+			function myFunction(val, id) {
+				console.log(isAlpha(val));
+				if(!isAlpha(val)){
+					document.getElementById(id).style.border = "2px solid red";
+					if(id == "fname"){
+						valArr[0] = false;
+						details['fname'] = "";
+					}
+					else if(id == "mname"){
+						valArr[1] = false;
+						details['mname'] = "";
+					}
+					else if(id == "lname"){
+						valArr[2] = false;
+						details['lname'] = "";
+					}
+				}
+				else{
+					document.getElementById(id).style.border = "2px solid green";
+					if(id == "fname"){
+						valArr[0] = true;
+						details['fname'] = val;
+					}
+					else if(id == "mname"){
+						valArr[1] = true;
+						details['mname'] = val;
+					}
+					else if(id == "lname"){
+						valArr[2] = true;
+						details['lname'] = val;
+					}
+				}
+			}
+
+			function test(){
+				// To get the 
+				var e = document.getElementById("education");
+				var strUser = e.options[e.selectedIndex].value;
+
+				console.log(strUser=="");
+
+				const rbs = document.querySelectorAll('input[]');
+				// const rbs = document.querySelectorAll('input[type="checkbox"]');
+		            let selectedValue;
+		            for (const rb of rbs) {
+		                if (rb.checked) {
+		                    selectedValue = rb.value;
+		                    break;
+		                }
+		            }
+		            if (selectedValue == undefined){
+		            	alert("Select an option");
+		            }
+		            else
+		            	alert(selectedValue);
+			}
+
+			function alphaOnly(event) {
+			 	var key = event.keyCode;
+			 	return ((key >= 65 && key <= 90) || key == 8);
+			};
+
+			var isAlpha = function(val){
+				var i = val.length;
+				while (i--) {
+					if (! /^[A-Z]$/i.test(val.charAt(i))){
+						return false
+					}
+				}
+				return true;
+			}
+			
+
+			function validateEmail(val, id) {
+				// var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+				var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9]+){1,2}$/;
+				if(val.match(mailformat))
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[3] = true;
+					details['mail'] = val;
+				}
+				else
+				{
+					document.getElementById(id).style.border = "2px solid red";
+					valArr[3] = false;
+					details['mail'] = "";
+				}
+			}
+			function validatePassword(val, id) {
+				// var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+				var passformat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
+				if(val.match(passformat))
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[4] = true;
+					details['password'] = val;
+				}
+				else
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[4] = false;
+					details['password'] = "";
+				}
+			}
+			function validateMobile(val, id) {
+				var phoneno = /^\d{10}$/;
+				if(val.match(phoneno))
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[5] = true;
+					details['phnumber'] = val;
+				}
+				else
+				{
+					document.getElementById(id).style.border = "2px solid red";
+					valArr[5] = false;
+					details['phnumber'] = "";
+				}
+			}
+			function validatePin(val, id) {
+				var pinno = /^\d{6}$/;
+				if(val.match(pinno))
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[6] = true;
+					details['pin'] = val;
+				}
+				else
+				{
+					document.getElementById(id).style.border = "2px solid red";
+					valArr[6] = false;
+					details['pin'] = "";
+				}
+			}
+			function validateAddress(val, id) {
+				if(val == "" || ((val.length < 10) || (val.length > 100)))
+				{
+					document.getElementById(id).style.border = "2px solid red";
+					valArr[7] = false;
+					details['address'] = "";
+				}
+				else
+				{
+					document.getElementById(id).style.border = "2px solid green";
+					valArr[7] = true;
+					details['address'] = val;
+				}
+			}
+			function validatecheckbox(){
+				const rbs = document.querySelectorAll('input[type="checkbox"]');
+				let selectedValue;
+				// console.log(rbs);
+				for (const rb of rbs) {
+					if (rb.checked) {
+						selectedValue = rb.value;
+						// break;
+					}
+				}
+				if (selectedValue == undefined){
+					// alert("Select an option");
+					valArr[8] = false;
+					details['qualification'] = undefined;
+				}
+				else{
+					valArr[8] = true;
+					details['qualification'] = rbs;
+				}
+			}
+			function validatecountry(){
+				var e = document.getElementById("country");
+				var strUser = e.options[e.selectedIndex].value;
+				if(strUser == ""){
+					valArr[9] = false;
+					details['country'] = undefined;
+				}
+				else{
+					valArr[9] = true;
+					details['country'] = strUser;
+				}
+			}
+
+			function validateradio(){
+				const rbs = document.querySelectorAll('input[]');
+				// const rbs = document.querySelectorAll('input[type="checkbox"]');
+				let selectedValue;
+				for (const rb of rbs) {
+					if (rb.checked) {
+						selectedValue = rb.value;
+						break;
+					}
+				}
+				if (selectedValue == undefined){
+					valArr[10] = false;
+					details['gender'] = undefined;
+				}
+				else{
+					valArr[10] = true;
+					details['gender'] = rbs;
+				}
+			}
+
+			function suggestion(val, id){
+				var e = document.getElementById("suggestion");
+				details['suggestion'] = e.value;
+				// console.log(e.value);
+			}
+
+			function validateall(){
+				validatecheckbox();
+				validateradio();
+				validateeducation();
+				suggestion();
+				for (index = 0; index < valArr.length; index++){
+					if (valArr[index] != true){
+						alert("Please fill all the details correctly");
+						console.log(details);
+						return false;
+					}
+				}
+				console.log(details);
+				return true;
+			}
+		</script>
+		
+	<!-- </section> -->
+</body>
+</html>
